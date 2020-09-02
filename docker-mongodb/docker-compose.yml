@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:3-xenial
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongdbsb:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 1234x
+    restart: unless-stopped
+volumes:
+  mongdbsb:
+
